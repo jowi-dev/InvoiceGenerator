@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Sans|Satisfy|Timmana|Yellowtail&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+  <link rel='stylesheet' href='./generated.css' />
+</head>
+<body class='bg-moon-gray'>
+  <div id='pdf' class='paper bg-white'>
+    <div class='head bb bw2 b--dark-red'>
+      <!--Title: "Invoice" Logo: ECW-->
+      <div class=title-section>
+        <h1 class=title>Invoice</h2>
+        <span id='current-date' class='pt4'></span>
+      </div>
+      <div class=logo-section>
+        <p class='logo lightest-blue mt3 f2'>Ellen Williams, LLC</p>
+      </div>
+    </div>
+    <div class='body'>
+      <!--Invoice details - reason, date, amount-->
+      <div class='body-top'>
+        <div class='company mt2'>
+          <span id='company' class='recipient f2'></span>
+        </div>
+        <div class='period mt3'>
+          <span id='date' class='date f3'></span>
+        </div>
+      </div>
+      <div class='body-main bg-light-gray'>
+        <div class='body-main-top'>
+          <span class='moon-gray f4'>Description</span>
+
+        </div>
+        <div class='body-main-body'>
+          <span id='reason' class='f3'></span>
+        </div>
+      </div>
+      <div class='body-footer'>
+        <span class='f2 mr3 dark-red'>Amount Due: </span>
+        <span id='amount' class='amount f2'></span>
+      </div>
+    </div>
+    <div class='footer bg-lightest-blue'>
+      <!--Ellen Williams LLC, contact info-->
+      <div class='ellen-llc'>
+        <span class='f3 dark-red'>Ellen Williams, LLC</span>
+      </div>
+      <div class='contact'>
+        <div class='address'>
+          <p class=''>P.O. Box 4618</p>
+          <p class='mt1'>Frankfort, KY 40602</p>
+        </div>
+        <div class='email mt2'>
+          <span>ellenconawaywilliams@gmail.com</span>
+        </div>
+        <div class='phone mt2'>
+          <span>(502) 330-2658</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id='convert'>Save as PDF</button>
+  <script src='./generated.js' type='text/javascript'></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 const electron = require('electron');
 const puppeteer = require('puppeteer');
+const connect = require('connect');
+const serveStatic = require('serve-static');
 
 // Module to control application life.
 const app = electron.app;
@@ -14,18 +16,27 @@ const url = require('url');
 let mainWindow;
 
 async function getPic(url) {
+  const myPath = 'invoice.pdf';
   const browser = await puppeteer.launch({ headless: false, slowMo: 250 });
   const page = await browser.newPage();
   await page.goto(url);
   await page.setViewport({ width: 1200, height: 800 });
-  await page.screenshot({ path: 'google.png' });
+  await page.screenshot({ path: myPath });
 
   await browser.close();
+
+
+
+
 }
+
+
 
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
+  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.on('will-download', () => console.log('download prompted'));
 
   // and load the index.html of the app.
   mainWindow.loadURL(

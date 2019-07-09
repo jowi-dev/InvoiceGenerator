@@ -2,17 +2,41 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Ellen Williams LLC Invoice Generator</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    Electron <script>document.write(process.versions.electron)</script>,
-    and Puppeteer 0.12.0.
-  </br>
-    <button id="start">Start Puppeteer</button>
+  <body class='bg-lightest-blue text-center p-4'>
+    <h2>Ellen Williams, LLC</h2>
+    <div class='text-left'>
+      <div class='my-2'>
+        <label for='company-name'>Recipient Company</label>
+        <input class='form-control' id='company-name' type=text placeholder="Company Name" value="" />
+      </div>
+      <div class='my-2'>
+        <label for='date'>Date</label>
+        <input class='form-control' id='date' type="text"  placeholder="Todays Date" value=''/>
+      </div>
+      <div class='my-2'>
+        <label for='reason'>Reason for Invoice</label>
+        <input class='form-control' id='reason' type='text' placeholder="Reason for Invoice" value="Consulting and government relations services."/>
+      </div>
+      <div class='my-2'>
+        <label for='amount'>Amount Due</label>
+        <div class='input-group'>
+          <div class='input-group-prepend'>
+            <span class='input-group-text'>$</span>
+          </div>
+          <input class='form-control' id='amount' type='text' placeholder="Amount Due" value="" />
+        </div>
+      </div>
+
+    </div>
+
+    <button class='btn btn-secondary' id='next' >Generate Invoice</button>
+
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+
 
     <script>
     // You can also require other files to run in this process
